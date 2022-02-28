@@ -10,6 +10,12 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
+    "skipLibCheck": true,
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
   },
   "exclude": ["node_modules"]
 }

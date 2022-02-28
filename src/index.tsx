@@ -1,9 +1,14 @@
+// polyfill
+import "babel-polyfill";
+
 // react libraries
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+
+// component
+import App from './App';
+
 ReactDOM.render(
-  <div>
-    <h1>Hello, Welcome to React and TypeScript</h1>
-  </div>,
+  <App />,
   document.getElementById("root")
 );
