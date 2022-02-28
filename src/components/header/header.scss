@@ -1,9 +1,11 @@
 .main-header {
   display: flex;
-  border-color: #dedede;
+  border-bottom: solid;
+  border-bottom-color: #dedede;
+  border-bottom-width: thin;
   justify-content: space-between;
-  width: 75%;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0 15%;
   align-items: center;
   position: relative;
 
@@ -11,14 +13,48 @@
   .main-logo-section {
     display: flex;
 
+    .img-container {
+      width: auto;
+      margin: 0 1rem;
+      cursor: pointer;
+      
+      .img-wrapper {
+        vertical-align: middle;
+        object-fit: contain;
+        display: inline-block;
+        outline: 0;
+        height: 45px;
+      }
+    }
+    .search-bar-container {
+      display: flex;
+      
+      .search-bar {
+        border: solid;
+        border-color: #d4d4d4;
+        border-radius: 6px;
+        font-size: 16px;
+        outline: none;
+        padding: 0.5rem;
+        width: 25rem;
+        height: 25px;
 
-  .img-container {
-      width: 10rem;
-      height: 10rem;
-    .img-wrapper {
-      object-fit: contain;
-  }
-  }
+        &:hover{
+          border-color: #a3a3a3;
+        }
+        &:focus{
+          border-color: #3B49DF;
+        }
+      }
+      .search-icon{
+        display: flex;
+        align-items: center;
+        padding: 0.2rem;
+        position: relative;
+        right: 35px;
+        cursor: pointer;
+      }
+    }
   }
   .cta-btns-section {
     display: flex;

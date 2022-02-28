@@ -1,6 +1,7 @@
 // react libraries
 import React from "react";
 
+import { FiSearch } from "react-icons/fi";
 // styles
 import "./header.scss";
 
@@ -10,14 +11,13 @@ const Header = () => {
     <header className="main-header">
       <div className="main-logo-section">
         <div className="img-container">
-          <img
-            src="assets/logo.png"
-            alt="logo"
-            className="img-wrapper"
-          />
+          <img src="assets/logo.png" alt="logo" className="img-wrapper" />
         </div>
-        <div>
-          <input />
+        <div className="search-bar-container">
+          <input className="search-bar" placeholder="Search...." />
+          <div className="search-icon">
+            <FiSearch />
+          </div>
         </div>
       </div>
       <div className="cta-btns-section">
