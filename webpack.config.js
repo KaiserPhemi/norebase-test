@@ -21,10 +21,14 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(jpe?g|png|svg|gif|ico)$/i,
-        exclude: /node_modules/,
-        use: "file?name=[path][name].[ext]!extract-loader!html-loader",
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
         include: path.join(__dirname, "assets"),
+        exclude: /node_modules/,
       },
     ],
   },
@@ -37,6 +41,9 @@ module.exports = {
     publicPath: "/",
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
     new HtmlWebpackPlugin({
       hash: true,
       template: "index.html",

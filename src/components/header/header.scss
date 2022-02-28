@@ -1,0 +1,62 @@
+.main-header {
+  display: flex;
+  border-color: #dedede;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+  align-items: center;
+  position: relative;
+
+
+  .main-logo-section {
+    display: flex;
+
+
+  .img-container {
+      width: 10rem;
+      height: 10rem;
+    .img-wrapper {
+      object-fit: contain;
+  }
+  }
+  }
+  .cta-btns-section {
+    display: flex;
+    justify-content: space-between;
+
+    .btns {
+      text-align: center; 
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 0.5rem 0.3rem;
+      padding: 0.7rem 1rem;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+      
+    }
+    .login-btn {
+      border: none;
+      background-color: #fff;
+      &:hover {
+        color: #3B49DF;
+        background-color: #EBEDFB;
+      }
+    }
+    .signup-btn {
+      border-color: #3B49DF;
+      background-color: #fff;
+      color: #3B49DF;
+      border-width: thin;
+
+      &:hover{
+        background-color: #3B49DF;
+        color: #fff;
+      }
+    }
+  }
+}
