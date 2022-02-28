@@ -7,15 +7,18 @@
   margin: 0 auto;
   padding: 0 15%;
   align-items: center;
-  position: relative;
-
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #fff;
 
   .main-logo-section {
     display: flex;
 
     .img-container {
       width: auto;
-      margin: 0 1rem;
+      margin-right: 0.75rem;
       cursor: pointer;
       
       .img-wrapper {

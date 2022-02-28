@@ -1,0 +1,26 @@
+.main-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 2rem;
+  min-height: 100vh;
+  padding: 0 15%;
+  padding-top: 5%;
+  background-color: #F5F5F5;
+
+  .side-bar {
+    display: flex;
+    flex-direction: column;
+
+    .side-bar-banner {
+      box-shadow: 0 0 0 1px rgba(23,23,23, 0.05);;
+    }
+  }
+
+  .articles {
+
+  }
+
+  .listings{
+
+  }
+}
