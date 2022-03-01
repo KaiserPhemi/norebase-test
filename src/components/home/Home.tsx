@@ -1,20 +1,277 @@
 // react libraries
 import React from "react";
 
+// third-party components
+import {
+  FcHome,
+  FcList,
+  FcFaq,
+  FcShop,
+  FcAbout,
+  FcBusinessContact,
+  FcPrivacy,
+} from "react-icons/fc";
+import { GiOldMicrophone } from "react-icons/gi";
+import { ImVideoCamera } from "react-icons/im";
+import { MdTag } from "react-icons/md";
+import { RiInstagramFill } from "react-icons/ri";
+import {
+  SiGithubsponsors,
+  SiTwitter
+} from "react-icons/si";
+import { FiThumbsUp, FiTwitch } from "react-icons/fi";
+import { GrFacebook, GrGithub } from "react-icons/gr";
+import { TiUser } from "react-icons/ti";
+
+// components
+import MainBtn from "../common/button/MainBtn";
+import NavLink from "../common/sidebar_link/NavLink";
+
 // styles
 import "./home.scss";
 
 //
 const Home = () => {
+  const linkArr = [
+    {
+      text: "Home",
+      component: <FcHome />,
+    },
+    {
+      text: "Listings",
+      component: <FcList />,
+    },
+    {
+      text: "Podcasts",
+      component: <GiOldMicrophone />,
+    },
+    {
+      text: "Videos",
+      component: <ImVideoCamera />,
+    },
+    {
+      text: "Tags",
+      component: <MdTag />,
+    },
+    {
+      text: "FAQ",
+      component: <FcFaq />,
+    },
+    {
+      text: "DEV Shop",
+      component: <FcShop />,
+    },
+    {
+      text: "Sponsors",
+      component: <SiGithubsponsors />,
+    },
+    {
+      text: "About",
+      component: <FcAbout />,
+    },
+    {
+      text: "Contact",
+      component: <FcBusinessContact />,
+    },
+  ];
+  const otherLinks = [
+    {
+      text: "Code of Conduct",
+      component: <FiThumbsUp />,
+    },
+    {
+      text: "Privacy Policy",
+      component: <FcPrivacy />,
+    },
+    {
+      text: "Terms of use",
+      component: <TiUser />,
+    },
+  ];
+
+  const allTags = [
+    {
+      id: 6,
+      name: "javascript",
+      bg_color_hex: "#f7df1e",
+      text_color_hex: "#000000",
+    },
+    {
+      id: 8,
+      name: "webdev",
+      bg_color_hex: "#562765",
+      text_color_hex: "#ffffff",
+    },
+    {
+      id: 555,
+      name: "beginners",
+      bg_color_hex: "#008335",
+      text_color_hex: "#FFFFFF",
+    },
+    {
+      id: 125,
+      name: "react",
+      bg_color_hex: "#222222",
+      text_color_hex: "#61DAF6",
+    },
+    {
+      id: 33,
+      name: "programming",
+      bg_color_hex: "#890606",
+      text_color_hex: "#ffffff",
+    },
+    {
+      id: 297,
+      name: "tutorial",
+      bg_color_hex: "#FEFFA5",
+      text_color_hex: "#b30047",
+    },
+    {
+      id: 3371,
+      name: "archlinux",
+      bg_color_hex: "#0009BD",
+      text_color_hex: "#FFFFFF",
+    },
+    {
+      id: 25,
+      name: "python",
+      bg_color_hex: "#1E38BB",
+      text_color_hex: "#FFDF5B",
+    },
+    {
+      id: 316,
+      name: "android",
+      bg_color_hex: "#56a036",
+      text_color_hex: "#ffffff",
+    },
+    {
+      id: 23,
+      name: "css",
+      bg_color_hex: "#2965F1",
+      text_color_hex: "#ffffff",
+    },
+    {
+      id: 112,
+      name: "productivity",
+      bg_color_hex: "#2A0798",
+      text_color_hex: "#C8F7C5",
+    },
+    {
+      id: 715,
+      name: "discuss",
+      bg_color_hex: "#000000",
+      text_color_hex: "#FFFFFF",
+    },
+    {
+      id: 44,
+      name: "news",
+      bg_color_hex: "#111111",
+      text_color_hex: "#fff9ac",
+    },
+    {
+      id: 630,
+      name: "career",
+      bg_color_hex: "#2A2566",
+      text_color_hex: "#FFFFFF",
+    },
+    {
+      id: 15,
+      name: "node",
+      bg_color_hex: "#3d8836",
+      text_color_hex: "#ffffff",
+    },
+    {
+      id: 168,
+      name: "devops",
+      bg_color_hex: "#06B500",
+      text_color_hex: "#FFFFFF",
+    },
+    {
+      id: 165,
+      name: "codenewbie",
+      bg_color_hex: "#57d700",
+      text_color_hex: "#ffffff",
+    },
+    {
+      id: 57,
+      name: "html",
+      bg_color_hex: "#F53900",
+      text_color_hex: "#FFFFFF",
+    },
+    {
+      id: 65131,
+      name: "latestnigerianewslat",
+      bg_color_hex: null,
+      text_color_hex: null,
+    },
+    {
+      id: 228,
+      name: "opensource",
+      bg_color_hex: "#26BE00",
+      text_color_hex: "#FFFFFF",
+    },
+  ];
   return (
     <main className="main-body">
       <section className="side-bar">
-        <div className="side-bar-banner">banner</div>
-        <div>links</div>
-        <div>link 2</div>
-        <div>link 3</div>
-        <div>link 4</div>
+        <div className="side-bar-banner">
+          <div className="banner-text">
+            <a href="#">DEV Community</a> is a community of 808,604 amazing
+            developers
+          </div>
+          <div className="sidebar-text">
+            <p>
+              We're a place where coders share, stay up-to-date and grow their
+              careers.
+            </p>
+          </div>
+          <div className="side-bar-btns">
+            <MainBtn btnClass="signup-btn" btnText="Create Account" />
+            <MainBtn btnClass="login-btn" btnText="Login" />
+          </div>
+        </div>
+        <nav className="side-bar-nav">
+          {linkArr.map((item, index) => (
+            <NavLink key={index} item={item} />
+          ))}
+        </nav>
+        <nav className="side-bar-nav">
+          <h3>Other</h3>
+          {otherLinks.map((item, index) => (
+            <NavLink key={index} item={item} />
+          ))}
+        </nav>
+        <nav className="social-media-links">
+          <span>
+            <SiTwitter />
+          </span>
+          <span>
+            <GrFacebook />
+          </span>
+          <span>
+            <GrGithub />
+          </span>
+          <span>
+            <RiInstagramFill />
+          </span>
+          <span>
+            <FiTwitch />
+          </span>
+        </nav>
+        <div>
+          <h3>Popular Tags</h3>
+          <section className="tag-container">
+            {
+              allTags.map(tag=>(
+                <span>#{tag.name}</span>
+              ))
+            }
+          </section>
+
+        </div>
       </section>
+
+
       <section className="articles">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Quam pellentesque

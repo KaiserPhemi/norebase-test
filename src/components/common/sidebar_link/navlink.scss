@@ -1,0 +1,13 @@
+.list-item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 6px;
+        padding: 0.5rem;
+
+        &:hover {
+          background-color: #EBEDFB;
+          color: #3B49DF;
+          text-decoration: underline;
+        }
+      }

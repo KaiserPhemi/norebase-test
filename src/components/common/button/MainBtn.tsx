@@ -1,6 +1,9 @@
 // react libraries
 import React from "react";
 
+// styles
+import './main_btn.scss';
+
 // interface
 interface IBtn {
   btnClass: string;

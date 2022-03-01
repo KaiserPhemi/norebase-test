@@ -1,7 +1,12 @@
 // react libraries
 import React from "react";
 
+// third-party libraries
 import { FiSearch } from "react-icons/fi";
+
+// components
+import MainBtn from "../common/button/MainBtn";
+
 // styles
 import "./header.scss";
 
@@ -21,8 +26,8 @@ const Header = () => {
         </div>
       </div>
       <div className="cta-btns-section">
-        <button className="btns login-btn">Login</button>
-        <button className="btns signup-btn">Create Account</button>
+        <MainBtn btnClass="login-btn" btnText="Login" />
+        <MainBtn btnClass="signup-btn" btnText="Create Account" />
       </div>
     </header>
   );
