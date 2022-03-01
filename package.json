@@ -6,7 +6,7 @@
   "author": "KaiserPhemi <kaiser.phemi@protonmail.ch>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack",
+    "build": "webpack",
     "dev": "NODE_ENV=development webpack-dev-server",
     "test": "jest"
   },
