@@ -149,7 +149,6 @@
           }
         }
       }
-
       .card-body {
         padding-left: 3rem;
 
@@ -161,6 +160,9 @@
 
           &:hover {
             color: #3B49DF;
+          }
+          a {
+            text-decoration: none;
           }
         }
         .article-tags {
@@ -229,7 +231,11 @@
         }
       }
     }
-
+    .loader-icon{
+      position: relative;
+      height: 10rem;
+      margin: 0 auto;
+    }
   }
 
   .listings{

@@ -11,6 +11,7 @@ import {
   FcBusinessContact,
   FcPrivacy,
 } from "react-icons/fc";
+import Rings from "react-loading-icons/dist/components/rings";
 import { GiOldMicrophone } from "react-icons/gi";
 import { ImVideoCamera } from "react-icons/im";
 import { MdTag } from "react-icons/md";
@@ -20,15 +21,15 @@ import { FiThumbsUp, FiTwitch } from "react-icons/fi";
 import { GrFacebook, GrGithub } from "react-icons/gr";
 import { TiUser } from "react-icons/ti";
 
+// api
+import { getAllTags, getAllArticles, fetchListings } from "../../api/fetchData";
+
 // components
 import MainBtn from "../common/button/MainBtn";
 import NavLink from "../common/sidebar_link/NavLink";
 
 // styles
 import "./home.scss";
-
-// api
-import { getAllTags, getAllArticles, fetchListings } from "../../api/fetchData";
 
 //
 const Home = () => {
@@ -188,7 +189,7 @@ const Home = () => {
       {/* main article section */}
       <section className="articles">
         <h4>Relevant</h4>
-        {articles &&
+        {articles.length > 0 ? (
           articles.map((article: any, index) => (
             <div key={index} className="article-card">
               <div className="card-header">
@@ -203,7 +204,9 @@ const Home = () => {
                 </div>
               </div>
               <div className="card-body">
-                <div className="article-title">{article.title}</div>
+                <div className="article-title">
+                  <a href={article.url}>{article.title}</a>
+                </div>
                 {article.tag_list &&
                   article.tag_list.map((tag: any, index: any) => (
                     <span className="article-tags" key={index}>
@@ -237,7 +240,12 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <div className="loader-icon">
+            <Rings fill="#868686" speed={0.5} />
+          </div>
+        )}
       </section>
 
       {/* Listing section */}

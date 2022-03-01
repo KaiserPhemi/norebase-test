@@ -26,8 +26,12 @@ const Header = () => {
         </div>
       </div>
       <div className="cta-btns-section">
-        <MainBtn btnClass="login-btn" btnText="Login" />
-        <MainBtn btnClass="signup-btn" btnText="Create Account" />
+        <a href="https://dev.to/enter">
+          <MainBtn btnClass="login-btn" btnText="Login" />
+        </a>
+        <a href="https://dev.to/enter?state=new-user">
+          <MainBtn btnClass="signup-btn" btnText="Create Account" />
+        </a>
       </div>
     </header>
   );
